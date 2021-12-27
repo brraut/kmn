@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,700&display=swap");
+
+@import "./theme.scss";
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+// button
+.my-btn {
+  background-color: $primary;
+  color: $white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 30px;
+  text-align: center;
+  border: none;
+}
+
+// navbar
+.my-navbar {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  .navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .logo-container {
+      height: 90px;
+      overflow: hidden;
+      img {
+        height: inherit;
+        object-fit: cover;
+      }
+    }
+    ul {
+      display: flex;
+      line-height: 90px;
+      justify-content: flex-end;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        padding-right: 30px;
+      }
+    }
+  }
+}
+// banner
+.banner {
+  position: relative;
+  height: 100vh;
+  .background-left {
+    height: 100vh;
+    width: 50%;
+    background: #f2f6ff;
+  }
+  .banner-content {
+    padding: 0px 100px;
+    height: calc(100vh - 200px);
+    overflow: hidden;
+    position: absolute;
+    top: 100px;
+    display: flex;
+    justify-content: space-between;
+    .banner-image {
+      width: 70%;
+      height: 100%;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .banner-wrapper {
+      margin-right: 45px;
+      flex: 1;
+      margin-top: 90px;
+      position: relative;
+      .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: -400px;
+        color: $primary;
+        font-size: 60px;
+        text-transform: uppercase;
+        font-weight: bold;
+        span {
+          color: $secondary;
+        }
+      }
+      .description {
+        font-size: 14px;
+        margin-top: 200px;
+      }
+    }
+  }
+}
