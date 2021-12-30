@@ -1,7 +1,7 @@
 import React from "react";
 import ServiceCard from "./common/ServiceCard";
 
-function Service({ type }) {
+function Service({ type = "" }) {
   return (
     <div
       className={

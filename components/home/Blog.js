@@ -4,7 +4,7 @@ import Slider from "react-slick";
 /* components */
 import NewsFeedCard from "./common/NewsFeedCard";
 
-function Blog() {
+function Blog({ type = "" }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -13,7 +13,11 @@ function Blog() {
     slidesToScroll: 1,
   };
   return (
-    <div className="blog-wrapper">
+    <div
+      className={
+        type === "bg-white" ? "blog-wrapper" : "blog-wrapper background-pink"
+      }
+    >
       <div className="title">
         <h6 className="text-center">Our Blog</h6>
       </div>

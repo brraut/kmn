@@ -1,9 +1,10 @@
 import React from "react";
-import Service from "../home/Service";
 
 /* components */
 import Header from "./Header";
+import Service from "../home/Service";
 import Process from "./Process";
+import Testimonial from "../home/Testimonial";
 
 function index() {
   return (
@@ -13,6 +14,7 @@ function index() {
         <Service type="bg-white" />
       </div>
       <Process />
+      <Testimonial />
     </>
   );
 }
