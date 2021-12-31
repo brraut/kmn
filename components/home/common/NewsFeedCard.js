@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function NewsFeedCard({ src = "", title = "", content = "" }) {
@@ -19,14 +20,18 @@ function NewsFeedCard({ src = "", title = "", content = "" }) {
               {content}
             </p>
           </div>
-          <div className="d-flex justify-content-start align-items-center mb-2">
-            <div className="title">
-              <h6 className="mb-0">Read More</h6>
-            </div>
-            <div>
-              <i class="bi bi-arrow-right-short icon-color-orange"></i>
-            </div>
-          </div>
+          <Link href="/blog/detail/1">
+            <a>
+              <div className="d-flex justify-content-start align-items-center mb-2">
+                <div className="title">
+                  <h6 className="mb-0">Read More</h6>
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right-short icon-color-orange"></i>
+                </div>
+              </div>
+            </a>
+          </Link>
         </div>
       </div>
     </>

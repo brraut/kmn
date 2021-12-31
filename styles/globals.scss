@@ -72,7 +72,15 @@ a {
 .color-dark {
   color: #171a65;
 }
-
+.lh-2 {
+  line-height: 2;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.pl-100 {
+  padding-left: 100px;
+}
 /* ------------------
 -------Global CSS end
 --------------------- */
@@ -128,7 +136,7 @@ a {
     background: #f2f6ff;
   }
   .service-background-left {
-    height: 65vh;
+    height: 70vh;
     width: 50%;
     background: #f2f6ff;
   }
@@ -136,6 +144,11 @@ a {
     height: 72vh;
     width: 50%;
     background: #f2f6ff;
+    position: relative;
+  }
+  .blog-detail {
+    position: absolute;
+    top: 183px;
   }
   .banner-content {
     padding: 0px 100px;
@@ -154,52 +167,42 @@ a {
         height: 100%;
       }
     }
-    .service-banner-image {
-      width: 70%;
-      height: 60%;
-      padding-top: 40px;
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+  }
+  .service-banner-image {
+    width: 70%;
+    height: 70%;
+    padding-top: 40px;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .banner-wrapper {
+    margin-right: 45px;
+    flex: 1;
+    margin-top: 90px;
+    position: relative;
+    .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: -400px;
+      color: $primary;
+      font-size: 60px;
+      text-transform: uppercase;
+      font-weight: bold;
+      span {
+        color: $secondary;
       }
     }
-    .service-banner-image {
-      width: 70%;
-      height: 70%;
-      padding-top: 40px;
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
+    .description {
+      font-size: 14px;
+      margin-top: 200px;
     }
-    .banner-wrapper {
-      margin-right: 45px;
-      flex: 1;
-      margin-top: 90px;
-      position: relative;
-      .title {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: -400px;
-        color: $primary;
-        font-size: 60px;
-        text-transform: uppercase;
-        font-weight: bold;
-        span {
-          color: $secondary;
-        }
-      }
-      .description {
-        font-size: 14px;
-        margin-top: 200px;
-      }
-      .service-description {
-        font-size: 12px;
-        margin-top: 100px;
-      }
+    .service-description {
+      font-size: 12px;
+      margin-top: 100px;
     }
   }
 }
@@ -258,6 +261,19 @@ a {
   background: #263443;
 }
 
+.blog-image {
+  width: 100%;
+  height: 400px;
+  padding-top: 40px;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+.fs-15 {
+  font-size: 15px;
+}
 .our-service-wrapper {
   padding: 80px 100px 100px 100px;
   .about-us-container {
@@ -433,11 +449,7 @@ a {
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .newsfeed-card-date {
-      color: #2b4eca;
-      line-height: 1.5;
-      font-size: 12px;
-    }
+
     .title {
       h6 {
         text-transform: none;
@@ -453,7 +465,20 @@ a {
     right: -10px !important;
   }
 }
+.newsfeed-card-date {
+  color: #2b4eca;
+  line-height: 1.5;
+  font-size: 12px;
+}
+.card-image {
+  width: 100px;
 
+  height: 100px;
+  object-fit: contain;
+}
+.border-none {
+  border: none;
+}
 .testimonial-wrapper {
   padding: 80px 100px 100px 100px;
   .slider-container {
