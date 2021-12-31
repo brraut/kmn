@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import Slider from "react-slick";
 
@@ -62,9 +63,13 @@ function Blog({ type = "" }) {
           </div>
         </Slider>
         <div className="d-flex justify-content-center">
-          <button className="my-btn mt-5">
-            See More <i className="bi bi-arrow-right"></i>
-          </button>
+          <Link href="/blog">
+            <a>
+              <button className="my-btn mt-5">
+                See More <i className="bi bi-arrow-right"></i>
+              </button>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

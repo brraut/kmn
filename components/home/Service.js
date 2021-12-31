@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import ServiceCard from "./common/ServiceCard";
 
@@ -25,9 +26,11 @@ function Service({ type = "" }) {
             fermentum.or sit amet, consectetur adipiscing elit. Vestibulum neque
             ac pulvinar sed fermentum...
           </p>
-          <button className="my-btn mt-5">
-            See More <i className="bi bi-arrow-right"></i>
-          </button>
+          <Link href="/services">
+            <button className="my-btn mt-5">
+              See More <i className="bi bi-arrow-right"></i>
+            </button>
+          </Link>
         </div>
         <div className="d-flex flex-row flex-width ps-5">
           <div className="d-flex flex-column mt-5">

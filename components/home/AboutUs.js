@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function AboutUs() {
@@ -23,9 +24,13 @@ function AboutUs() {
               neque ac pulvinar sed fermentum...
             </p>
           </div>
-          <button className="my-btn mt-5">
-            See More <i className="bi bi-arrow-right"></i>
-          </button>
+          <Link href="/about">
+            <a>
+              <button className="my-btn mt-5">
+                See More <i className="bi bi-arrow-right"></i>
+              </button>
+            </a>
+          </Link>
         </div>
       </div>
     </div>
