@@ -32,7 +32,7 @@ function ServiceCard({
               <h6 className="mb-0">Read More</h6>
             </div>
             <div>
-              <i class="bi bi-arrow-right-short icon-color-orange"></i>
+              <i className="bi bi-arrow-right-short icon-color-orange"></i>
             </div>
           </div>
         </div>

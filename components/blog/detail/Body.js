@@ -6,7 +6,7 @@ function Body() {
       <div className="about-background-left"></div>
       <div className="container">
         <div className="row blog-detail px-5">
-          <div class="col-md-7	col-lg-7	col-xl-7	col-xxl-7">
+          <div className="col-md-7	col-lg-7	col-xl-7	col-xxl-7">
             <div>
               <h4 className="fw-bolder text-center">
                 7 Mind Numbing Facts About Windows You must Know
@@ -42,14 +42,14 @@ function Body() {
               </p>
             </div>
             <div className="pt-4 d-flex justify-content-start">
-              <i class="bi bi-facebook bg-warning me-3 px-1"></i>
-              <i class="bi bi-youtube bg-warning me-3 px-1"></i>
-              <i class="bi bi-instagram bg-warning me-3 px-1"></i>
-              <i class="bi bi-twitter bg-warning me-3 px-1"></i>
+              <i className="bi bi-facebook bg-warning me-3 px-1"></i>
+              <i className="bi bi-youtube bg-warning me-3 px-1"></i>
+              <i className="bi bi-instagram bg-warning me-3 px-1"></i>
+              <i className="bi bi-twitter bg-warning me-3 px-1"></i>
             </div>
           </div>
 
-          <div class="pl-100 col-md-5	col-lg-5	col-xl-5	col-xxl-5">
+          <div className="pl-100 col-md-5	col-lg-5	col-xl-5	col-xxl-5">
             <BlogList src="/images/card1.png" />
             <BlogList src="/images/card3.png" />
             <BlogList src="/images/card2.png" />
@@ -64,20 +64,22 @@ function Body() {
 const BlogList = ({ src }) => {
   return (
     <>
-      <div class="card mb-3 border-none">
-        <div class="row g-0">
-          <div class="col-md-3">
-            <img src={src} class="img-fluid card-image" alt="..." />
+      <div className="card mb-3 border-none">
+        <div className="row g-0">
+          <div className="col-md-3">
+            <img src={src} className="img-fluid card-image" alt="..." />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h6 class="card-title fs-15">
+          <div className="col-md-8">
+            <div className="card-body">
+              <h6 className="card-title fs-15">
                 {" "}
                 7 Mind Numbing Facts About Windows You must Know
               </h6>
 
-              <p class="card-text">
-                <small class="fs-12 newsfeed-card-date">December 31,2021</small>
+              <p className="card-text">
+                <small className="fs-12 newsfeed-card-date">
+                  December 31,2021
+                </small>
               </p>
             </div>
           </div>

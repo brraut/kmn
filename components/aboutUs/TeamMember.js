@@ -86,9 +86,9 @@ const MemberImage = ({ src = "", name = "", designation = "" }) => {
           </h5>
         </div>
         <div className="pb-4 px-5 d-flex justify-content-center">
-          <i class="bi bi-facebook text-white social-media  px-3"></i>
-          <i class="bi bi-instagram text-white social-media  px-3"></i>
-          <i class="bi bi-twitter text-white social-media  px-3"></i>
+          <i className="bi bi-facebook text-white social-media  px-3"></i>
+          <i className="bi bi-instagram text-white social-media  px-3"></i>
+          <i className="bi bi-twitter text-white social-media  px-3"></i>
         </div>
       </div>
     </div>
