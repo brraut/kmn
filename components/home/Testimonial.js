@@ -25,7 +25,7 @@ function Testimonial() {
               <img src="/images/quotes.png" className="m-auto" />
             </div>
             <div className="content">
-              <p className="text-center">
+              <p className="text-center line-clamp-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Vestibulum neque ac pulvinar sed fermentum. Lorem ipsum dolor
                 sit amet, consectetur adipiscing elit. Vestibulum neque ac
@@ -49,7 +49,7 @@ function Testimonial() {
               <img src="/images/quotes.png" className="m-auto" />
             </div>
             <div className="content">
-              <p className="text-center">
+              <p className="text-center line-clamp-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Vestibulum neque ac pulvinar sed fermentum. Lorem ipsum dolor
                 sit amet, consectetur adipiscing elit. Vestibulum neque ac

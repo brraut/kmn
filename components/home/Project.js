@@ -62,10 +62,10 @@ const ProjectImage = ({
         <h5>{projectName}</h5>
       </div>
       <div className={hovered ? "body p-5" : "display-none"}>
-        <div className="title-container pb-3">
-          <h5>{projectName}</h5>
+        <div className="title-container">
+          <h5 className="mb-0">{projectName}</h5>
         </div>
-        <div className=" fs-6 pb-3">
+        <div className=" fs-6">
           <h6 className="fw-light content-container">{content}</h6>
         </div>
         <div className="d-flex justify-content-start align-items-center">
