@@ -11,15 +11,15 @@ function Service({ type = "" }) {
           : "our-service-wrapper background-pink"
       }
     >
-      <div className="d-flex">
-        <div className="flex-width pt-5 pe-5">
+      <div className="d-flex flex-direction-column">
+        <div className="flex-width pt-5 pr-48">
           <div className="title">
             <h6>Our Services</h6>
           </div>
           <div className="secondaryTitle pt-1 pb-5">
             <h2>Explore Our Services</h2>
           </div>
-          <p className="line-height">
+          <p className="line-height line-clamp-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             neque ac pulvinar sed fermentum. Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Vestibulum neque ac pulvinar sed
@@ -27,12 +27,14 @@ function Service({ type = "" }) {
             ac pulvinar sed fermentum...
           </p>
           <Link href="/services">
-            <button className="my-btn mt-5">
-              See More <i className="bi bi-arrow-right"></i>
-            </button>
+            <div className="text-align-center">
+              <button className="my-btn">
+                See More <i className="bi bi-arrow-right"></i>
+              </button>
+            </div>
           </Link>
         </div>
-        <div className="d-flex flex-row flex-width ps-5">
+        <div className="d-flex flex-row flex-width pl-48">
           <div className="d-flex flex-column mt-5">
             <div className="">
               <ServiceCard
