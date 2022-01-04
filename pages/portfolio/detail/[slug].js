@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 
 /* component */
-import Body from "../../../components/blog/detail/index";
+import Body from "../../../components/portfolio/detail/index";
 
 function blogSingle() {
   const router = useRouter();

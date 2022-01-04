@@ -48,6 +48,9 @@ a {
   color: #ff9110;
   font-size: 30px;
 }
+.font-color-orange {
+  color: #ff9110;
+}
 .icon-backgroundColor-orange {
   background-color: #ff9110;
   font-size: 20px;
@@ -299,6 +302,22 @@ a {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
 .our-service-wrapper {
   padding: 80px 100px 100px 100px;
@@ -554,6 +573,30 @@ a {
 
 .pr-48 {
   padding-right: 48px;
+}
+
+.portfolio-container {
+  padding: 50px 0px;
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card {
+    border: none !important;
+  }
+  .card-body {
+    background: #eeeded;
+    padding: 2rem 2.5rem 1.5rem !important;
+  }
+  .position-absolute {
+    bottom: -15px;
+    height: 50%;
+    width: 25%;
+    z-index: -1;
+    left: -15px;
+    background: #ffe2c1;
+  }
 }
 // Small devices (landscape phones, 576px and up)
 
@@ -960,6 +1003,12 @@ a {
           font-size: 1.2rem !important;
         }
       }
+    }
+  }
+  .portfolio-container {
+    .m-3 {
+      margin: 0 !important;
+      padding: 20px 20px 20px 30px;
     }
   }
 }
