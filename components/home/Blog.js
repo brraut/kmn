@@ -7,11 +7,32 @@ import NewsFeedCard from "./common/NewsFeedCard";
 
 function Blog({ type = "" }) {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    rows: 1,
+    responsive: [
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <div
@@ -33,13 +54,10 @@ function Blog({ type = "" }) {
               content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
               title="7 Mind Numbing Facts About Windows You must Know"
             />
+          </div>
+          <div className="slider-card">
             <NewsFeedCard
-              src="/images/card2.png"
-              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-              title="7 Mind Numbing Facts About Windows You must Know"
-            />
-            <NewsFeedCard
-              src="/images/card3.png"
+              src="/images/card1.png"
               content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
               title="7 Mind Numbing Facts About Windows You must Know"
             />
@@ -50,13 +68,24 @@ function Blog({ type = "" }) {
               content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
               title="7 Mind Numbing Facts About Windows You must Know"
             />
+          </div>
+          <div className="slider-card">
             <NewsFeedCard
-              src="/images/card2.png"
+              src="/images/card1.png"
               content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
               title="7 Mind Numbing Facts About Windows You must Know"
             />
+          </div>
+          <div className="slider-card">
             <NewsFeedCard
-              src="/images/card3.png"
+              src="/images/card1.png"
+              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
+              title="7 Mind Numbing Facts About Windows You must Know"
+            />
+          </div>
+          <div className="slider-card">
+            <NewsFeedCard
+              src="/images/card1.png"
               content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
               title="7 Mind Numbing Facts About Windows You must Know"
             />

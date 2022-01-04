@@ -8,7 +8,7 @@ function header() {
         <div className="banner-content">
           <div className="banner-wrapper">
             <div className="title">Blog</div>
-            <div className="service-description">
+            <div className="service-description line-clamp-4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
               temporibus laboriosam blanditiis laudantium cupiditate atque iste
             </div>

@@ -5,8 +5,8 @@ function Body() {
     <div className="banner">
       <div className="about-background-left"></div>
       <div className="container">
-        <div className="row blog-detail px-5">
-          <div class="col-md-7	col-lg-7	col-xl-7	col-xxl-7">
+        <div className="row blog-detail px-4">
+          <div class="col-md-7	col-lg-7	col-xl-7	col-xxl-7 mb-5">
             <div>
               <h4 className="fw-bolder text-center">
                 7 Mind Numbing Facts About Windows You must Know
@@ -41,7 +41,7 @@ function Body() {
                 Veritatis
               </p>
             </div>
-            <div className="pt-4 d-flex justify-content-start">
+            <div className="pt-4 d-flex justify-content-start justify-content-res">
               <i class="bi bi-facebook bg-warning me-3 px-1"></i>
               <i class="bi bi-youtube bg-warning me-3 px-1"></i>
               <i class="bi bi-instagram bg-warning me-3 px-1"></i>
@@ -66,10 +66,10 @@ const BlogList = ({ src }) => {
     <>
       <div class="card mb-3 border-none">
         <div class="row g-0">
-          <div class="col-md-3">
+          <div class="col-md-3 detail-align-center">
             <img src={src} class="img-fluid card-image" alt="..." />
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 detail-align-center">
             <div class="card-body">
               <h6 class="card-title fs-15">
                 {" "}
