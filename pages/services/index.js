@@ -1,7 +1,7 @@
 import React from "react";
 
 /* components */
-import Service from "../components/service/index";
+import Service from "../../components/service/index";
 
 function services() {
   return <Service />;

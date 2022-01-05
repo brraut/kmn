@@ -8,7 +8,7 @@ function index() {
   return (
     <>
       <Body />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

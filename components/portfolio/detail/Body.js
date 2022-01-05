@@ -3,32 +3,32 @@ import React from "react";
 function Body() {
   return (
     <div className="banner">
-      <div className="about-background-left"></div>
-      <div className="container">
+      <div className="detail-page-background"></div>
+      <div className="container py-5">
         <div className="row blog-detail px-4">
-          <div class="col-md-7	col-lg-7	col-xl-7	col-xxl-7 mb-5 p-5">
+          <div class="col-md-12	col-lg-7	col-xl-7	col-xxl-7 mb-5 p-48">
             <div className="row mb-4">
               <div className="col-12	col-sm-12	col-md-12	col-lg-12	col-xl-12	col-xxl-12">
                 <div className="portfolio-image">
                   <img src="/images/aboutUs.jpg" className="blog-img" />
                 </div>
               </div>
-              <div className="col-12	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
+              <div className="col-6	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
                 <div className="portfolio-image">
                   <img src="/images/aboutUs.jpg" className="blog-img" />
                 </div>
               </div>
-              <div className="col-12	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
+              <div className="col-6	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
                 <div className="portfolio-image">
                   <img src="/images/aboutUs.jpg" className="blog-img" />
                 </div>
               </div>
-              <div className="col-12	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
+              <div className="col-6	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
                 <div className="portfolio-image">
                   <img src="/images/aboutUs.jpg" className="blog-img" />
                 </div>
               </div>
-              <div className="col-12	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
+              <div className="col-6	col-sm-6	col-md-3	col-lg-3	col-xl-3	col-xxl-3">
                 <div className="portfolio-image">
                   <img src="/images/aboutUs.jpg" className="blog-img" />
                 </div>
@@ -63,7 +63,9 @@ function Body() {
             </div>
           </div>
 
-          <div class="pl-100 col-md-5	col-lg-5	col-xl-5	col-xxl-5">
+          <div class="pl-100 col-md-12	col-lg-5	col-xl-5	col-xxl-5 p-48">
+            <h6 className="text-align-center-res mb-1-res">Similar Post</h6>
+
             <BlogList src="/images/card1.png" />
             <BlogList src="/images/card3.png" />
             <BlogList src="/images/card2.png" />

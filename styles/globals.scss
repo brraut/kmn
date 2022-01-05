@@ -75,6 +75,9 @@ a {
 .color-dark {
   color: #171a65;
 }
+.p-48 {
+  padding: 3rem;
+}
 .lh-2 {
   line-height: 2;
 }
@@ -82,7 +85,7 @@ a {
   font-size: 18px;
 }
 .pl-100 {
-  padding-left: 100px;
+  padding-left: 6rem;
 }
 .px-24 {
   padding-left: 1.5rem;
@@ -153,9 +156,15 @@ a {
     background: #f2f6ff;
     position: relative;
   }
-  .blog-detail {
+  .detail-page-background {
+    z-index: -1;
+    height: 62vh;
+    width: 50%;
+    background: #f2f6ff;
     position: absolute;
-    top: 183px;
+  }
+  .blog-detail {
+    position: relative;
   }
   .banner-content {
     padding: 0px 100px;
@@ -524,7 +533,6 @@ a {
 }
 .card-image {
   width: 100px;
-
   height: 100px;
   object-fit: contain;
 }
@@ -596,6 +604,22 @@ a {
     z-index: -1;
     left: -15px;
     background: #ffe2c1;
+  }
+}
+.service-container {
+  padding: 50px 0px;
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card {
+    border: none !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 30px;
+  }
+  .card-body {
+    padding: 1rem 1rem 0rem;
   }
 }
 // Small devices (landscape phones, 576px and up)
@@ -740,6 +764,9 @@ a {
   .text-align-center-res {
     text-align: center;
   }
+  .mb-1-res {
+    margin-bottom: 1rem;
+  }
   .blog-wrapper {
     padding: 50px;
     .slider-card {
@@ -763,6 +790,9 @@ a {
     .detail-align-center {
       text-align: center;
     }
+    .p-48 {
+      padding: 1rem;
+    }
   }
   .my-navbar {
     .container {
@@ -777,6 +807,12 @@ a {
     }
     .navbar-wrapper {
       padding: 10px 20px;
+      .offcanvas-start {
+        width: 300px;
+      }
+      ul {
+        line-height: 50px;
+      }
       .logo-container {
         height: 75px;
       }
@@ -1010,5 +1046,15 @@ a {
       margin: 0 !important;
       padding: 20px 20px 20px 30px;
     }
+  }
+  .service-container {
+    .m-3 {
+      margin: 10px 12px 10px 26px !important;
+    }
+  }
+  .card-image {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
   }
 }
