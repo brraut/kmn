@@ -10,6 +10,26 @@ function TeamMember() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <div className="blog-wrapper pb-5 mb-5">
@@ -27,11 +47,15 @@ function TeamMember() {
               designation="Technician"
               name="Anmol Sarao"
             />
+          </div>
+          <div className="slider-card">
             <MemberImage
               src="/images/member1.png"
               designation="Developer"
               name="Jonny Singh"
             />
+          </div>
+          <div className="slider-card">
             <MemberImage
               src="/images/member2.png"
               designation="Technician"
@@ -44,11 +68,15 @@ function TeamMember() {
               designation="Technician"
               name="Anmol Sarao"
             />
+          </div>
+          <div className="slider-card">
             <MemberImage
               src="/images/member1.png"
               designation="Developer"
               name="Suyog Singh"
             />
+          </div>
+          <div className="slider-card">
             <MemberImage
               src="/images/member2.png"
               designation="Technician"

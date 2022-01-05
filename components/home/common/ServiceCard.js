@@ -14,7 +14,7 @@ function ServiceCard({
   return (
     <>
       <div
-        className="card px-4 py-5 service-card-container"
+        className="card px-24 py-5 service-card-container"
         style={{ backgroundColor: backgroundColor }}
       >
         <img src={src} className="" alt="..." />

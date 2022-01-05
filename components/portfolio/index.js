@@ -1,15 +1,17 @@
 import React from "react";
-import Footer from "../../footer/Footer";
 
 /* component */
+import Footer from "../footer/Footer";
+import Header from "./Header";
 import Body from "./Body";
 
 function index() {
   return (
-    <>
+    <div>
+      <Header />
       <Body />
       <Footer />
-    </>
+    </div>
   );
 }
 

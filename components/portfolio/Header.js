@@ -3,18 +3,18 @@ import React from "react";
 function header() {
   return (
     <div className="banner">
-      <div className="service-background-left"></div>
+      <div className="about-background-left"></div>
       <div className="container">
         <div className="banner-content">
           <div className="banner-wrapper">
-            <div className="title">our services</div>
+            <div className="title">Portfolio</div>
             <div className="service-description line-clamp-4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
               temporibus laboriosam blanditiis laudantium cupiditate atque iste
             </div>
           </div>
           <div className="service-banner-image">
-            <img src="/images/banner1.png" className="h-60" alt="" />
+            <img src="/images/aboutUs.jpg" className="" alt="" />
           </div>
         </div>
       </div>
