@@ -5,8 +5,6 @@ import React from "react";
 import Body from "../../../components/portfolio/detail/index";
 
 function blogSingle() {
-  const router = useRouter();
-  const { slug } = router.query;
   return <Body />;
 }
 
