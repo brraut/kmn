@@ -21,7 +21,6 @@ function HomeIndex() {
       <Project context={homeContext} />
       <Blog context={homeContext} />
       <Testimonial context={homeContext} />
-      <Footer />
     </div>
   );
 }
