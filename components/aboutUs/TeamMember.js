@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 /* components */
 
-function TeamMember() {
+function TeamMember({ context }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -41,65 +41,27 @@ function TeamMember() {
       </div>
       <div>
         <Slider {...settings}>
-          <div className="slider-card">
-            <MemberImage
-              src="/images/member2.png"
-              designation="Technician"
-              name="Anmol Sarao"
-            />
-          </div>
-          <div className="slider-card">
-            <MemberImage
-              src="/images/member1.png"
-              designation="Developer"
-              name="Jonny Singh"
-            />
-          </div>
-          <div className="slider-card">
-            <MemberImage
-              src="/images/member2.png"
-              designation="Technician"
-              name="Anmol Sarao"
-            />
-          </div>
-          <div className="slider-card">
-            <MemberImage
-              src="/images/member2.png"
-              designation="Technician"
-              name="Anmol Sarao"
-            />
-          </div>
-          <div className="slider-card">
-            <MemberImage
-              src="/images/member1.png"
-              designation="Developer"
-              name="Suyog Singh"
-            />
-          </div>
-          <div className="slider-card">
-            <MemberImage
-              src="/images/member2.png"
-              designation="Technician"
-              name="Anmol Sarao"
-            />
-          </div>
+          {context?.teams?.map((team) => (
+            <div className="slider-card">
+              <MemberImage teamDetail={team} />
+            </div>
+          ))}
         </Slider>
       </div>
     </div>
   );
 }
 
-const MemberImage = ({ src = "", name = "", designation = "" }) => {
+const MemberImage = ({ teamDetail }) => {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
-  console.log("hover", hovered);
   return (
     <div
       className="card team-member"
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >
-      <img src={src} className="w-100 h-100" alt="" />
+      <img src={teamDetail?.image} className="w-100 h-100" alt="" />
       <div className={hovered ? "on-hover-project" : ""}></div>
       {/* <div className="on-hover-project"></div> */}
 
@@ -110,13 +72,19 @@ const MemberImage = ({ src = "", name = "", designation = "" }) => {
         </div>
         <div className=" fs-6">
           <h5 className="text-white fw-light text-center content-container">
-            {designation}
+            {teamDetail?.designation}
           </h5>
         </div>
         <div className="pb-4 px-5 d-flex justify-content-center">
-          <i className="bi bi-facebook text-white social-media  px-3"></i>
-          <i className="bi bi-instagram text-white social-media  px-3"></i>
-          <i className="bi bi-twitter text-white social-media  px-3"></i>
+          <a href={teamDetail?.facebook_link}>
+            <i className="bi bi-facebook text-white social-media  px-3"></i>
+          </a>
+          <a href={teamDetail?.instagram_link}>
+            <i className="bi bi-instagram text-white social-media  px-3"></i>
+          </a>
+          <a href={teamDetail?.twitter_link}>
+            <i className="bi bi-twitter text-white social-media  px-3"></i>
+          </a>
         </div>
       </div>
     </div>

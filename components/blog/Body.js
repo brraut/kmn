@@ -4,7 +4,7 @@ import React from "react";
 /* component */
 import NewsFeedCard from "../home/common/NewsFeedCard";
 
-function Body({ type = "" }) {
+function Body({ type = "", context }) {
   return (
     <div
       className={
@@ -13,48 +13,12 @@ function Body({ type = "" }) {
           : "blog-wrapper background-pink"
       }
     >
-      <div className="d-flex justify-content-between pt-5 flex-direction-res">
-        <NewsFeedCard
-          src="/images/card1.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          title="7 Mind Numbing Facts About Windows You must Know"
-        />
-
-        {/* <Link href="/blog/detail/1">
-          <a> */}
-        <NewsFeedCard
-          src="/images/card1.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          title="7 Mind Numbing Facts About Windows You must Know"
-        />
-        {/* </a>
-        </Link>
-        <Link href="/blog/detail/1">
-          <a> */}
-        <NewsFeedCard
-          src="/images/card1.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          title="7 Mind Numbing Facts About Windows You must Know"
-        />
-        {/* </a>
-        </Link> */}
-      </div>
-      <div className="d-flex justify-content-between pt-5 flex-direction-res">
-        <NewsFeedCard
-          src="/images/card1.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          title="7 Mind Numbing Facts About Windows You must Know"
-        />
-        <NewsFeedCard
-          src="/images/card1.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          title="7 Mind Numbing Facts About Windows You must Know"
-        />
-        <NewsFeedCard
-          src="/images/card1.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          title="7 Mind Numbing Facts About Windows You must Know"
-        />
+      <div className="row">
+        {context?.blogs?.map((blog) => (
+          <div className="col-lg-4 col-md-6 col-12">
+            <NewsFeedCard blog={blog} />
+          </div>
+        ))}
       </div>
     </div>
   );

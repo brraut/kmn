@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React from "react";
 
-function AboutUs() {
+function AboutUs({ context }) {
   return (
     <div className="container">
       <div className="about-us-wrapper">
         <div className="d-flex about-us-container">
           <div className="flex-width">
-            <img src="/images/about.jpg" alt="" />
+            <img src={context?.about_section?.image} alt="" />
           </div>
           <div className="flex-width">
             <div className="title">
@@ -18,11 +18,7 @@ function AboutUs() {
             </div>
             <div className="mb-0">
               <p className="line-height line-clamp-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Vestibulum neque ac pulvinar sed fermentum. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Vestibulum neque ac
-                pulvinar sed fermentum.or sit amet, consectetur adipiscing elit.
-                Vestibulum neque ac pulvinar sed fermentum...
+                {context?.about_section?.excerpt}
               </p>
             </div>
             <div className="btn-margin w-100">

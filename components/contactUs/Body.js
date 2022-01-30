@@ -1,6 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { postContactApi } from "../../api/contact/contactApi";
 
-function Body() {
+function Body({ context }) {
+  const [contactData, setContactData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setErrors();
+    setLoading(true);
+    postContactApi(contactData)
+      .then((res) => {
+        setLoading(false);
+        setContactData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        alert(res?.data?.message);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setErrors(err?.response?.data?.errors);
+      });
+  };
+
+  const handleChange = (e) => {
+    errors && setErrors();
+    setContactData({ ...contactData, [e.target.name]: e.target.value });
+  };
+
   return (
     <div className="contact-us">
       <div className="container pt-5 mb-5">
@@ -24,10 +60,14 @@ function Body() {
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  onChange={handleChange}
+                  value={contactData?.name}
                   className="form-control w-75 form-input"
                   id="exampleFormControlInput1"
-                  placeholder=""
+                  placeholder="Enter Full Name"
                 />
+                <span className="text-danger">{errors?.name}</span>
               </div>
               <div className="mb-3">
                 <label
@@ -38,10 +78,32 @@ function Body() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  onChange={handleChange}
+                  value={contactData?.email}
                   className="form-control w-75 form-input"
                   id="exampleFormControlInput1"
-                  placeholder=""
+                  placeholder="Enter Your Email"
                 />
+                <span className="text-danger">{errors?.email}</span>
+              </div>
+              <div className="mb-3">
+                <label
+                  htmlFor="exampleFormControlInput1"
+                  className="fw-500 form-label"
+                >
+                  Phone
+                </label>
+                <input
+                  type="text"
+                  name="phone"
+                  onChange={handleChange}
+                  value={contactData?.phone}
+                  className="form-control w-75 form-input"
+                  id="exampleFormControlInput1"
+                  placeholder="Enter Phone Number"
+                />
+                <span className="text-danger">{errors?.phone}</span>
               </div>
               <div className="mb-3">
                 <label
@@ -52,12 +114,22 @@ function Body() {
                 </label>
                 <textarea
                   type="text"
+                  name="message"
+                  onChange={handleChange}
                   className="form-control w-75 form-input form-textArea"
                   id="exampleFormControlInput1"
-                  placeholder=""
+                  placeholder="Please type the message"
+                  value={contactData?.message}
                 />
+                <span className="text-danger">{errors?.message}</span>
               </div>
-              <button className="my-btn mt-4 mb-5">Send Message</button>
+              <button
+                className="my-btn mt-4 mb-5"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
             </form>
           </div>
           <div className="col-md-5	col-lg-5	col-xl-5	col-xxl-5">
@@ -67,20 +139,21 @@ function Body() {
               </div>
               <div className="pt-3 d-flex align-items-center mb-2">
                 <i className="bi bi-geo-alt-fill color-dark fs-26 me-5"></i>
-                <h5 className="fw-normal mb-0">
-                  2972 Westheimer Rd. Santa Ana, Illinois 85486
-                </h5>
+                <h5 className="fw-normal mb-0">{context?.address}</h5>
               </div>
               <div className="pt-3 d-flex align-items-center mb-2">
                 <i className="bi bi-telephone-fill color-dark fs-26 me-5"></i>
-                <h5 className="fw-normal mb-0">(406) 555789</h5>
+                <h5 className="fw-normal mb-0">{context?.primary_phone}</h5>
               </div>
               <div className="pt-3 d-flex align-items-center mb-4">
                 <i className="bi bi-envelope color-dark fs-26 me-5"></i>
-                <h5 className="fw-normal mb-0">kmn@gmail.com</h5>
+                <h5 className="fw-normal mb-0">{context?.primary_email}</h5>
               </div>
               <div className="">
                 <h5>See in map</h5>
+                <div
+                  dangerouslySetInnerHTML={{ __html: context?.map_location }}
+                ></div>
               </div>
             </div>
           </div>

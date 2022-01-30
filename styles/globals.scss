@@ -212,6 +212,7 @@ a {
       font-weight: bold;
       span {
         color: $secondary;
+        display: block;
       }
     }
     .description {
@@ -231,6 +232,15 @@ a {
   display: flex !important;
   justify-content: space-around;
   padding: 0px 10px;
+}
+
+.single-blog {
+  padding-top: 6rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.newsletter-icon {
+  cursor: pointer;
 }
 
 .footer {

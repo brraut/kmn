@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 /* component */
-import Footer from "../footer/Footer";
 import Header from "./Header";
 import Body from "./Body";
+import { getPortfolioApi } from "../../api/portfolio/portfolioApi";
 
 function index() {
+  const [portfolioContext, setPortfolioContext] = useState();
+  useEffect(() => {
+    getPortfolioApi().then((res) => setPortfolioContext(res.data.data));
+  }, []);
   return (
     <div>
-      <Header />
-      <Body />
-      <Footer />
+      <Header context={portfolioContext} />
+      <Body context={portfolioContext} />
     </div>
   );
 }

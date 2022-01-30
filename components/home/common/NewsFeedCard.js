@@ -1,26 +1,26 @@
 import Link from "next/link";
 import React from "react";
 
-function NewsFeedCard({ src = "", title = "", content = "" }) {
+function NewsFeedCard({ blog }) {
   return (
     <>
       <div className="card px-3 pt-3 pb-4 newsfeed-card-container">
-        <img src={src} className="" alt="..." />
+        <img src={blog?.image} className="" alt="..." />
         <div className="card-body px-0 pt-4 pb-0">
-          <h6 className={`card-title fw-bold`}>{title}</h6>
+          <h6 className={`card-title fw-bold`}>{blog?.title}</h6>
 
           <div className="">
             <h6 className={`card-text newsfeed-card-date`}>
-              {`November 25,2020`}
+              {blog?.created_at}
             </h6>
           </div>
 
           <div className="pt-3 pb-3">
             <p className={`card-text newsfeed-card-content text-left`}>
-              {content}
+              {blog?.excerpt}...
             </p>
           </div>
-          <Link href="/blog/detail/1">
+          <Link href={`/blog/detail/${blog?.slug}`}>
             <a>
               <div className="d-flex justify-content-start align-items-center mb-2">
                 <div className="title">

@@ -5,7 +5,7 @@ import Slider from "react-slick";
 /* components */
 import NewsFeedCard from "./common/NewsFeedCard";
 
-function Blog({ type = "" }) {
+function Blog({ type = "", context }) {
   const settings = {
     dots: false,
     infinite: true,
@@ -17,7 +17,10 @@ function Blog({ type = "" }) {
       {
         breakpoint: 2000,
         settings: {
-          slidesToShow: 3,
+          slidesToShow:
+            context?.recent_blogs?.length < 3
+              ? context?.recent_blogs?.length
+              : 3,
         },
       },
       {
@@ -48,48 +51,11 @@ function Blog({ type = "" }) {
       </div>
       <div>
         <Slider {...settings}>
-          <div className="slider-card">
-            <NewsFeedCard
-              src="/images/card1.png"
-              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-              title="7 Mind Numbing Facts About Windows You must Know"
-            />
-          </div>
-          <div className="slider-card">
-            <NewsFeedCard
-              src="/images/card1.png"
-              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-              title="7 Mind Numbing Facts About Windows You must Know"
-            />
-          </div>
-          <div className="slider-card">
-            <NewsFeedCard
-              src="/images/card1.png"
-              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-              title="7 Mind Numbing Facts About Windows You must Know"
-            />
-          </div>
-          <div className="slider-card">
-            <NewsFeedCard
-              src="/images/card1.png"
-              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-              title="7 Mind Numbing Facts About Windows You must Know"
-            />
-          </div>
-          <div className="slider-card">
-            <NewsFeedCard
-              src="/images/card1.png"
-              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-              title="7 Mind Numbing Facts About Windows You must Know"
-            />
-          </div>
-          <div className="slider-card">
-            <NewsFeedCard
-              src="/images/card1.png"
-              content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-              title="7 Mind Numbing Facts About Windows You must Know"
-            />
-          </div>
+          {context?.recent_blogs?.map((blog) => (
+            <div className="slider-card">
+              <NewsFeedCard blog={blog} />
+            </div>
+          ))}
         </Slider>
         <div className="d-flex justify-content-center">
           <Link href="/blog">

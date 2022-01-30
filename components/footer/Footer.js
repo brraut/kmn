@@ -1,18 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import { useAppContext } from "../../api/AppContext";
+import { postNewsletterApi } from "../../api/contact/contactApi";
 
 function Footer() {
+  const value = useAppContext();
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = () => {
+    if (email && !loading) {
+      setLoading(true);
+      postNewsletterApi({ email: email })
+        .then((res) => {
+          setLoading(false);
+          setEmail("");
+          alert(res?.data?.message);
+        })
+        .catch((err) => {
+          setLoading(false);
+          alert(err?.response?.data?.message);
+        });
+    }
+  };
+  console.log(email);
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
   return (
     <div className="footer">
       <div className="d-flex first-row">
         <div className="social-media-container">
           <div>
-            <img src="/images/kmnlogo.png" alt="logo kmn" />
+            <img src={value?.logo} alt="logo kmn" />
           </div>
           <div className="pt-4 d-flex justify-content-between">
-            <i className="bi bi-facebook bg-warning px-1"></i>
-            <i className="bi bi-youtube bg-warning px-1"></i>
-            <i className="bi bi-instagram bg-warning px-1"></i>
-            <i className="bi bi-twitter bg-warning px-1"></i>
+            <a
+              href={value?.facebook_link || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-facebook bg-warning px-1"></i>
+            </a>
+            <a
+              href={value?.youtube_link || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-youtube bg-warning px-1"></i>
+            </a>
+            <a
+              href={value?.instagram_link || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-instagram bg-warning px-1"></i>
+            </a>
           </div>
         </div>
         <div>
@@ -56,19 +97,20 @@ function Footer() {
         </div>
         <div className="pt-3">
           <h6 className="text-light">
-            <i className="bi bi-geo-alt-fill text-warning me-2"></i> 2972
-            Westheimer Rd. Santa Ana, Illinois 85486
+            <i className="bi bi-geo-alt-fill text-warning me-2"></i>
+            {value?.address}
           </h6>
         </div>
         <div className="pt-3">
           <h6 className="text-light">
-            <i className="bi bi-telephone-fill text-warning me-2"></i> (406)
-            555789
+            <i className="bi bi-telephone-fill text-warning me-2"></i>
+            <a href={`tel:${value?.primary_phone}`}>{value?.primary_phone}</a>
           </h6>
         </div>
         <div className="pt-3">
           <h6 className="text-light">
-            <i className="bi bi-envelope text-warning me-2"></i> kmn@gmail.com
+            <i className="bi bi-envelope text-warning me-2"></i>
+            {value?.primary_email}
           </h6>
         </div>
       </div>
@@ -83,10 +125,18 @@ function Footer() {
           <input
             className="input-field"
             type="text"
-            placeholder="Username"
-            name="usrnm"
+            placeholder="Enter Email"
+            name="newsletter_email"
+            onChange={handleChange}
+            value={email}
           />
-          <i className="bi bi-envelope bg-warning fs-5 input-icon"></i>
+          <i
+            className={
+              (loading ? "bi bi-arrow-counterclockwise" : "bi bi-envelope") +
+              " bg-warning fs-5 input-icon newsletter-icon"
+            }
+            onClick={handleSubmit}
+          ></i>
         </div>
       </div>
     </div>

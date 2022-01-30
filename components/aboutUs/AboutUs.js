@@ -1,6 +1,6 @@
 import React from "react";
 
-function AboutUs() {
+function AboutUs({ context }) {
   return (
     <div className="container">
       <div className="about-us-wrapper">
@@ -16,18 +16,12 @@ function AboutUs() {
           </div>
           <div className="flex-width">
             <div className="mb-0">
-              <p className="line-height fw-normal text-dark">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Vestibulum neque ac pulvinar sed fermentum. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Vestibulum neque ac
-                pulvinar sed fermentum.or sit amet, consectetur adipiscing elit.
-                Vestibulum neque ac pulvinar sed fermentum... Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Vestibulum neque ac
-                pulvinar sed fermentum. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Vestibulum neque ac pulvinar sed fermentum.or
-                sit amet, consectetur adipiscing elit. Vestibulum neque ac
-                pulvinar sed fermentum...
-              </p>
+              <p
+                className="line-height fw-normal text-dark"
+                dangerouslySetInnerHTML={{
+                  __html: context?.about_section?.description,
+                }}
+              ></p>
             </div>
             {/* <button className="my-btn mt-5">
             See More <i className="bi bi-arrow-right"></i>

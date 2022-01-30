@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 /* components */
 import Header from "./Header";
 import Body from "./Body";
-import Footer from "../footer/Footer";
+import { getServiceApi } from "../../api/service/serviceApi";
 
 function index() {
+  const [serviceContext, setServiceContext] = useState();
+  useEffect(() => {
+    getServiceApi().then((res) => setServiceContext(res.data.data));
+  }, []);
+
   return (
     <>
-      <Header />
-      <Body />
-      <Footer />
+      <Header context={serviceContext} />
+      <Body context={serviceContext} />
     </>
   );
 }

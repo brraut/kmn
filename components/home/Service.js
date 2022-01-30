@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import ServiceCard from "./common/ServiceCard";
 
-function Service({ type = "" }) {
+function Service({ type = "", context }) {
   return (
     <div
       className={
@@ -20,11 +20,7 @@ function Service({ type = "" }) {
             <h2>Explore Our Services</h2>
           </div>
           <p className="line-height line-clamp-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            neque ac pulvinar sed fermentum. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Vestibulum neque ac pulvinar sed
-            fermentum.or sit amet, consectetur adipiscing elit. Vestibulum neque
-            ac pulvinar sed fermentum...
+            {context?.service_section?.excerpt}...
           </p>
           <Link href="/services">
             <div className="text-align-center">
@@ -39,37 +35,33 @@ function Service({ type = "" }) {
             <div className="">
               <ServiceCard
                 backgroundColor="#263443"
-                src="/images/Window installation.svg"
-                title="Window Services"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum neque ac pulvinar sed fermentum."
+                src={context?.services[0]?.icon || ""}
+                title={context?.services[0]?.title || ""}
+                content={context?.services[0]?.excerpt + "..." || ""}
               />
             </div>
             <div className="banner-image">
               <ServiceCard
-                src="/images/Door install.svg"
-                title="Door Installation"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Vestibulum neque ac pulvinar sed fermentum."
+                src={context?.services[1]?.icon || ""}
+                title={context?.services[1]?.title || ""}
+                content={context?.services[1]?.excerpt + "..." || ""}
               />
             </div>
           </div>
           <div className="d-flex flex-column">
             <div className="banner-image">
               <ServiceCard
-                src="/images/Window installation2.svg"
-                title="Window Installation"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Vestibulum neque ac pulvinar sed fermentum."
+                src={context?.services[2]?.icon || ""}
+                title={context?.services[2]?.title || ""}
+                content={context?.services[2]?.excerpt + "..." || ""}
               />
             </div>
             <div className="banner-image">
               <ServiceCard
                 backgroundColor="#263443"
-                src="/images/Door service.svg"
-                title="Door Services"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Vestibulum neque ac pulvinar sed fermentum."
+                src={context?.services[3]?.icon || ""}
+                title={context?.services[3]?.title || ""}
+                content={context?.services[3]?.excerpt + "..." || ""}
               />
             </div>
           </div>

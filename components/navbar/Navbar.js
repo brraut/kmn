@@ -1,14 +1,16 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
+import { useAppContext } from "../../api/AppContext";
 
 function Navbar() {
+  const value = useAppContext();
   return (
     <>
       <div className="my-navbar">
         <div className="container">
           <div className="navbar-wrapper align-items-center">
             <div className="logo-container">
-              <img src="/images/kmnlogo.png" alt="" />
+              <img src={value?.logo} alt="" />
             </div>
             <button
               className="btn btn-primary h-50 mt-2 ham-menu-display"

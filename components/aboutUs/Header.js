@@ -1,6 +1,6 @@
 import React from "react";
 
-function header() {
+function header({ context }) {
   return (
     <div className="banner">
       <div className="about-background-left"></div>
@@ -14,7 +14,7 @@ function header() {
             </div>
           </div>
           <div className="service-banner-image">
-            <img src="/images/aboutUs.jpg" className="" alt="" />
+            <img src={context?.about_section?.banner} className="" alt="" />
           </div>
         </div>
       </div>

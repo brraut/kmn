@@ -1,59 +1,44 @@
 import React from "react";
 
-function Body() {
+function Body({ blog, recentBlogs }) {
   return (
     <div className="banner">
       <div className="detail-page-background"></div>
-      <div className="container">
+      <div className="container single-blog">
         <div className="row blog-detail px-4">
           <div className="col-md-7	col-lg-7	col-xl-7	col-xxl-7 mb-5">
             <div>
-              <h4 className="fw-bolder text-center">
-                7 Mind Numbing Facts About Windows You must Know
-              </h4>
+              <h4 className="fw-bolder text-center">{blog?.title}</h4>
             </div>
 
             <div className="blog-image">
-              <img src="/images/aboutUs.jpg" className="blog-img" />
+              <img src={blog?.image} className="blog-img" />
             </div>
             <div className="py-3">
               <h6 className={`card-text newsfeed-card-date fs-6`}>
-                {`November 25,2020`}
+                {blog?.created_at}
               </h6>
             </div>
-            <div className="pt-4">
-              <p className="color-dark lh-2 fst-italic fw-normal fs-18">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                mollitia, molestiae quas vel sint commodi repudiandae
-                consequuntur voluptatum laborum numquam blanditiis harum
-                quisquam eius sed odit fugiat iusto fuga praesentium optio,
-                eaque rerum! Provident similique accusantium nemo autem.
-                Veritatis
-              </p>
-            </div>
-            <div className="pt-3">
-              <p className="lh-2 fw-normal fs-18">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                mollitia, molestiae quas vel sint commodi repudiandae
-                consequuntur voluptatum laborum numquam blanditiis harum
-                quisquam eius sed odit fugiat iusto fuga praesentium optio,
-                eaque rerum! Provident similique accusantium nemo autem.
-                Veritatis
-              </p>
-            </div>
+
             <div className="pt-4 d-flex justify-content-start justify-content-res">
               <i className="bi bi-facebook bg-warning me-3 px-1"></i>
               <i className="bi bi-youtube bg-warning me-3 px-1"></i>
               <i className="bi bi-instagram bg-warning me-3 px-1"></i>
               <i className="bi bi-twitter bg-warning me-3 px-1"></i>
             </div>
+            <div className="pt-4">
+              <div
+                className="color-dark lh-2 fst-italic fw-normal fs-18"
+                dangerouslySetInnerHTML={{ __html: blog?.description }}
+              ></div>
+            </div>
           </div>
 
           <div className="pl-100 col-md-5	col-lg-5	col-xl-5	col-xxl-5">
-            <BlogList src="/images/card1.png" />
-            <BlogList src="/images/card3.png" />
-            <BlogList src="/images/card2.png" />
-            <BlogList src="/images/card1.png" />
+            <h6 className="text-align-center-res mb-1-res">Recent Blogs</h6>
+            {recentBlogs?.map((recentBlog) => (
+              <BlogList blog={recentBlog} />
+            ))}
           </div>
         </div>
       </div>
@@ -61,24 +46,21 @@ function Body() {
   );
 }
 
-const BlogList = ({ src }) => {
+const BlogList = ({ blog }) => {
   return (
     <>
       <div className="card mb-3 border-none">
         <div className="row g-0">
           <div className="col-md-3 detail-align-center">
-            <img src={src} className="img-fluid card-image" alt="..." />
+            <img src={blog?.image} className="img-fluid card-image" alt="..." />
           </div>
           <div className="col-md-8 detail-align-center">
             <div className="card-body">
-              <h6 className="card-title fs-15">
-                {" "}
-                7 Mind Numbing Facts About Windows You must Know
-              </h6>
+              <h6 className="card-title fs-15">{blog?.title}</h6>
 
               <p className="card-text">
                 <small className="fs-12 newsfeed-card-date">
-                  December 31,2021
+                  {blog?.created_at}
                 </small>
               </p>
             </div>

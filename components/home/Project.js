@@ -1,42 +1,26 @@
 import React, { useState } from "react";
 
-function Project() {
+function Project({ context }) {
   return (
     <div className="project-wrapper">
       <div className="pb-5">
         <h2 className="text-center fw-bold fs-1">Our Latest Projects</h2>
       </div>
       <div className="project-container">
-        <ProjectImage
-          src="/images/latestProject1.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
+        {/* <ProjectImage
+          src={context?.portfolio[0]?.image}
+          content=""
           parentDivClassName="item-1"
-          projectName="Door Installation"
-        />
-        <ProjectImage
-          src="/images/latestProject2.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          parentDivClassName="item-2"
-          projectName="Window Installation"
-        />
-        <ProjectImage
-          src="/images/latestProject3.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          parentDivClassName="item-3"
-          projectName="Automatic Gates"
-        />
-        <ProjectImage
-          src="/images/latestProject4.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          parentDivClassName="item-4"
-          projectName="Glasses Installation"
-        />
-        <ProjectImage
-          src="/images/latestProject5.png"
-          content="Lorem ipsum dolor sit amet, consectetur scing elit. Dui luctus nisi, sapien in amet.Lorem ipsum dolor sit amet, conser adipiscing elit. Dui luctus nisi, sapien in amet...."
-          parentDivClassName="item-5"
-          projectName="Door Repair"
-        />
+          projectName={context?.portfolio[0]?.title}
+        /> */}
+        {context?.portfolio.map((work, index) => (
+          <ProjectImage
+            src={work?.image}
+            content=""
+            projectName={work?.title}
+            parentDivClassName={`item-${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );
