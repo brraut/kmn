@@ -9,9 +9,13 @@ function Navbar() {
       <div className="my-navbar">
         <div className="container">
           <div className="navbar-wrapper align-items-center">
-            <div className="logo-container">
-              <img src={value?.logo} alt="" />
-            </div>
+            <Link href="/">
+              <a>
+                <div className="logo-container">
+                  <img src={value?.logo} alt="" />
+                </div>
+              </a>
+            </Link>
             <button
               className="btn btn-primary h-50 mt-2 ham-menu-display"
               type="button"

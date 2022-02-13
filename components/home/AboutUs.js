@@ -17,7 +17,7 @@ function AboutUs({ context }) {
               <h2>Know more about us</h2>
             </div>
             <div className="mb-0">
-              <p className="line-height line-clamp-4">
+              <p className="line-height line-clamp-4 ">
                 {context?.about_section?.excerpt}
               </p>
             </div>

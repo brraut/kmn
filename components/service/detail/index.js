@@ -5,7 +5,7 @@ import { getSingleServcieApi } from "../../../api/service/serviceApi";
 /* component */
 import Body from "./Body";
 
-function index() {
+const Index = () => {
   const [singleServiceContext, setSingleService] = useState();
   const router = useRouter();
   const { slug } = router.query;
@@ -22,6 +22,6 @@ function index() {
       />
     </>
   );
-}
+};
 
-export default index;
+export default Index;

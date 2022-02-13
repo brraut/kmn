@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 import { useAppContext } from "../../api/AppContext";
 import { postNewsletterApi } from "../../api/contact/contactApi";
@@ -62,31 +63,52 @@ function Footer() {
           </div>
           <div className="pt-3">
             <h6 className="text-light">
-              <i className="bi bi-caret-right-fill text-warning me-2"></i> About
+              <Link href="/about">
+                <a>
+                  <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
+                  About
+                </a>
+              </Link>
             </h6>
           </div>
           <div className="pt-3">
             <h6 className="text-light">
-              <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
-              Services
+              <Link href="/services">
+                <a>
+                  <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
+                  Services
+                </a>
+              </Link>
             </h6>
           </div>
           <div className="pt-3">
             <h6 className="text-light">
-              <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
-              Pricing
+              <Link href="/portfolio">
+                <a>
+                  <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
+                  Portfolio
+                </a>
+              </Link>
             </h6>
           </div>
           <div className="pt-3">
             <h6 className="text-light">
-              <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
-              Projects
+              <Link href="/blog">
+                <a>
+                  <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
+                  Projects
+                </a>
+              </Link>
             </h6>
           </div>
           <div className="pt-3">
             <h6 className="text-light">
-              <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
-              Contact US
+              <Link href="/contact">
+                <a>
+                  <i className="bi bi-caret-right-fill text-warning me-2"></i>{" "}
+                  Contact US
+                </a>
+              </Link>
             </h6>
           </div>
         </div>

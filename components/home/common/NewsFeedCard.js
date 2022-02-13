@@ -1,17 +1,18 @@
 import Link from "next/link";
 import React from "react";
+import { formatDate } from "../../../utils/moment";
 
 function NewsFeedCard({ blog }) {
   return (
     <>
       <div className="card px-3 pt-3 pb-4 newsfeed-card-container">
-        <img src={blog?.image} className="" alt="..." />
+        <img src={blog?.image} alt={blog?.title} />
         <div className="card-body px-0 pt-4 pb-0">
           <h6 className={`card-title fw-bold`}>{blog?.title}</h6>
 
           <div className="">
             <h6 className={`card-text newsfeed-card-date`}>
-              {blog?.created_at}
+              {formatDate(blog?.created_at)}
             </h6>
           </div>
 

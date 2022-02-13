@@ -17,7 +17,7 @@ function AboutUs({ context }) {
           <div className="flex-width">
             <div className="mb-0">
               <p
-                className="line-height fw-normal text-dark"
+                className="line-height fw-normal text-dark "
                 dangerouslySetInnerHTML={{
                   __html: context?.about_section?.description,
                 }}

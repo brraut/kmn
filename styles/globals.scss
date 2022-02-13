@@ -61,6 +61,9 @@ a {
     font-weight: bolder;
   }
 }
+.font-16 {
+  font-size: 16px;
+}
 .fw-500 {
   font-weight: 500;
 }
@@ -215,12 +218,18 @@ a {
         display: block;
       }
     }
+    .my-btn {
+      display: inline-block;
+      &:hover {
+        color: #fff;
+      }
+    }
     .description {
-      font-size: 14px;
+      font-size: 16px;
       margin-top: 150px;
     }
     .service-description {
-      font-size: 12px;
+      font-size: 16px;
       margin-top: 100px;
     }
   }
@@ -251,6 +260,13 @@ a {
   column-gap: 3rem;
   .first-row {
     column-gap: 3rem;
+  }
+  h6 {
+    a {
+      &:hover {
+        color: #ffc107;
+      }
+    }
   }
   .social-media-container {
     display: flex;
@@ -381,6 +397,7 @@ a {
     }
     img {
       height: 60px;
+      object-fit: contain;
     }
   }
 }

@@ -1,9 +1,15 @@
+import Head from "next/head";
+import Link from "next/link";
 import React from "react";
+import { formatDate } from "../../../utils/moment";
 
 function Body({ blog, recentBlogs }) {
   return (
     <div className="banner">
-      <div className="detail-page-background"></div>
+      <Head>
+        <title>KMN Blogs | {blog?.title}</title>
+      </Head>
+      ;<div className="detail-page-background"></div>
       <div className="container single-blog">
         <div className="row blog-detail px-4">
           <div className="col-md-7	col-lg-7	col-xl-7	col-xxl-7 mb-5">
@@ -36,8 +42,8 @@ function Body({ blog, recentBlogs }) {
 
           <div className="pl-100 col-md-5	col-lg-5	col-xl-5	col-xxl-5">
             <h6 className="text-align-center-res mb-1-res">Recent Blogs</h6>
-            {recentBlogs?.map((recentBlog) => (
-              <BlogList blog={recentBlog} />
+            {recentBlogs?.map((recentBlog, index) => (
+              <BlogList blog={recentBlog} key={index} />
             ))}
           </div>
         </div>
@@ -50,22 +56,30 @@ const BlogList = ({ blog }) => {
   return (
     <>
       <div className="card mb-3 border-none">
-        <div className="row g-0">
-          <div className="col-md-3 detail-align-center">
-            <img src={blog?.image} className="img-fluid card-image" alt="..." />
-          </div>
-          <div className="col-md-8 detail-align-center">
-            <div className="card-body">
-              <h6 className="card-title fs-15">{blog?.title}</h6>
+        <Link href={`/blog/detail/${blog?.slug}`}>
+          <a>
+            <div className="row g-0">
+              <div className="col-md-3 detail-align-center">
+                <img
+                  src={blog?.image}
+                  className="img-fluid card-image"
+                  alt={blog?.title}
+                />
+              </div>
+              <div className="col-md-8 detail-align-center">
+                <div className="card-body">
+                  <h6 className="card-title fs-15">{blog?.title}</h6>
 
-              <p className="card-text">
-                <small className="fs-12 newsfeed-card-date">
-                  {blog?.created_at}
-                </small>
-              </p>
+                  <p className="card-text">
+                    <small className="fs-12 newsfeed-card-date">
+                      {formatDate(blog?.created_at)}
+                    </small>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </a>
+        </Link>
       </div>
     </>
   );

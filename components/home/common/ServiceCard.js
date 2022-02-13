@@ -1,9 +1,11 @@
+import Link from "next/link";
 import React from "react";
 
 function ServiceCard({
   src = "",
   title = "",
   content = "",
+  slug = "",
   backgroundColor = "#fff",
 }) {
   const fontColor =
@@ -29,7 +31,11 @@ function ServiceCard({
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <div className="title">
-              <h6 className="mb-0">Read More</h6>
+              <Link href={`/services/detail/${slug}`}>
+                <a>
+                  <h6 className="mb-0">Read More</h6>
+                </a>
+              </Link>
             </div>
             <div>
               <i className="bi bi-arrow-right-short icon-color-orange"></i>

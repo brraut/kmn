@@ -5,8 +5,11 @@ function Body({ context }) {
   return (
     <div className="container service-container">
       <div className="row">
-        {context?.services?.map((service) => (
-          <div className="col-12	col-sm-6	col-md-12	col-lg-6	col-xl-6	col-xxl-6 g-0">
+        {context?.services?.map((service, index) => (
+          <div
+            className="col-12	col-sm-6	col-md-12	col-lg-6	col-xl-6	col-xxl-6 g-0"
+            key={index}
+          >
             <PortfolioList service={service} />
           </div>
         ))}

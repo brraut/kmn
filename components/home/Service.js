@@ -37,6 +37,7 @@ function Service({ type = "", context }) {
                 backgroundColor="#263443"
                 src={context?.services[0]?.icon || ""}
                 title={context?.services[0]?.title || ""}
+                slug={context?.services[0]?.slug || ""}
                 content={context?.services[0]?.excerpt + "..." || ""}
               />
             </div>
@@ -44,6 +45,7 @@ function Service({ type = "", context }) {
               <ServiceCard
                 src={context?.services[1]?.icon || ""}
                 title={context?.services[1]?.title || ""}
+                slug={context?.services[1]?.slug || ""}
                 content={context?.services[1]?.excerpt + "..." || ""}
               />
             </div>
@@ -53,6 +55,7 @@ function Service({ type = "", context }) {
               <ServiceCard
                 src={context?.services[2]?.icon || ""}
                 title={context?.services[2]?.title || ""}
+                slug={context?.services[2]?.slug || ""}
                 content={context?.services[2]?.excerpt + "..." || ""}
               />
             </div>
@@ -61,6 +64,7 @@ function Service({ type = "", context }) {
                 backgroundColor="#263443"
                 src={context?.services[3]?.icon || ""}
                 title={context?.services[3]?.title || ""}
+                slug={context?.services[3]?.slug || ""}
                 content={context?.services[3]?.excerpt + "..." || ""}
               />
             </div>

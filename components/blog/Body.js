@@ -14,8 +14,8 @@ function Body({ type = "", context }) {
       }
     >
       <div className="row">
-        {context?.blogs?.map((blog) => (
-          <div className="col-lg-4 col-md-6 col-12">
+        {context?.blogs?.map((blog, index) => (
+          <div className="col-lg-4 col-md-6 col-12" key={index}>
             <NewsFeedCard blog={blog} />
           </div>
         ))}

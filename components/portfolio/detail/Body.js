@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 
 const settings = {
@@ -12,16 +14,23 @@ const settings = {
 function Body({ work, recentWorks }) {
   return (
     <div className="banner">
+      <Head>
+        <title>KMN Portfolio | {work?.title}</title>
+      </Head>
       <div className="detail-page-background"></div>
       <div className="container py-5">
         <div className="row blog-detail px-4">
           <div className="col-md-12	col-lg-7	col-xl-7	col-xxl-7 mb-5 p-48">
             {work?.gallery?.length > 0 ? (
               <div className="row mb-4">
-                {work?.gallery?.map((image) => (
-                  <div>
+                {work?.gallery?.map((image, index) => (
+                  <div key={index}>
                     <div className="portfolio-image">
-                      <img src={image?.src} className="blog-img" />
+                      <img
+                        src={image?.src}
+                        className="blog-img"
+                        alt={work?.title}
+                      />
                     </div>
                   </div>
                 ))}
@@ -58,8 +67,8 @@ function Body({ work, recentWorks }) {
 
           <div className="pl-100 col-md-12	col-lg-5	col-xl-5	col-xxl-5 p-48">
             <h6 className="text-align-center-res mb-1-res">Similar Works</h6>
-            {recentWorks?.map((recentWork) => (
-              <BlogList work={recentWork} />
+            {recentWorks?.map((recentWork, index) => (
+              <BlogList work={recentWork} key={index} />
             ))}
           </div>
         </div>
@@ -72,22 +81,30 @@ const BlogList = ({ work }) => {
   return (
     <>
       <div className="card mb-3 border-none">
-        <div className="row g-0">
-          <div className="col-md-3 detail-align-center">
-            <img src={work?.image} className="img-fluid card-image" alt="..." />
-          </div>
-          <div className="col-md-8 detail-align-center">
-            <div className="card-body">
-              <h6 className="card-title fs-15">{work?.title}</h6>
+        <Link href={`/portfolio/detail/${work?.slug}`}>
+          <a>
+            <div className="row g-0">
+              <div className="col-md-3 detail-align-center">
+                <img
+                  src={work?.image}
+                  className="img-fluid card-image"
+                  alt="..."
+                />
+              </div>
+              <div className="col-md-8 detail-align-center">
+                <div className="card-body">
+                  <h6 className="card-title fs-15">{work?.title}</h6>
 
-              <p className="card-text">
-                <small className="fs-12 newsfeed-card-date">
-                  {work?.created_at}
-                </small>
-              </p>
+                  <p className="card-text">
+                    <small className="fs-12 newsfeed-card-date">
+                      {work?.created_at}
+                    </small>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </a>
+        </Link>
       </div>
     </>
   );

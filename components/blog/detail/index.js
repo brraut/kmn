@@ -5,7 +5,7 @@ import { getSingleBlogApi } from "../../../api/blog/blogApi";
 /* component */
 import Body from "./Body";
 
-function index() {
+function Index() {
   const [singleBlogContext, setSingleBlog] = useState();
   const router = useRouter();
   const { slug } = router.query;
@@ -22,4 +22,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

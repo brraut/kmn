@@ -21,9 +21,9 @@ function Banner({ context }) {
         <div className="banner-carousel">
           <Slider {...settings}>
             {context?.banners &&
-              context?.banners?.map((banner) => {
+              context?.banners?.map((banner, index) => {
                 return (
-                  <div className="banner">
+                  <div className="banner" key={index}>
                     <div className="background-left"></div>
                     <div className="container">
                       <div className="banner-content">
@@ -37,6 +37,8 @@ function Banner({ context }) {
                           </div>
 
                           <a
+                            rel="noreferrer"
+                            target="_blank"
                             href={banner?.link || "#"}
                             className="my-btn mt-5 btn-width"
                           >

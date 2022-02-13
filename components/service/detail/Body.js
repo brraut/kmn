@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 import Slider from "react-slick";
 
@@ -13,6 +15,9 @@ const settings = {
 function Body({ service, otherServices }) {
   return (
     <div className="banner">
+      <Head>
+        <title>KMN Services | {service?.title}</title>
+      </Head>
       <div className="detail-page-background"></div>
       <div className="container py-5">
         <div className="row blog-detail px-4">
@@ -21,9 +26,9 @@ function Body({ service, otherServices }) {
               {service?.gallery?.length > 0 && (
                 <div className="col-12">
                   <Slider {...settings}>
-                    {service?.gallery?.map((image) => (
+                    {service?.gallery?.map((image, index) => (
                       // <div className="col-12	col-sm-12	col-md-12	col-lg-12	col-xl-12	col-xxl-12">
-                      <div>
+                      <div key={index}>
                         <div className="portfolio-image">
                           <img src={image?.src} className="blog-img" />
                         </div>
@@ -58,8 +63,8 @@ function Body({ service, otherServices }) {
 
           <div className="pl-100 col-md-12	col-lg-5	col-xl-5	col-xxl-5 p-48">
             <h6 className="text-align-center-res mb-1-res">Other Services</h6>
-            {otherServices?.map((otherService) => (
-              <BlogList service={otherService} />
+            {otherServices?.map((otherService, index) => (
+              <BlogList service={otherService} key={index} />
             ))}
           </div>
         </div>
@@ -72,26 +77,30 @@ const BlogList = ({ service }) => {
   return (
     <>
       <div className="card mb-3 border-none">
-        <div className="row g-0">
-          <div className="col-md-3 detail-align-center">
-            <img
-              src={service?.image}
-              className="img-fluid card-image"
-              alt="..."
-            />
-          </div>
-          <div className="col-md-8 detail-align-center">
-            <div className="card-body">
-              <h6 className="card-title fs-15">{service?.title}</h6>
+        <Link href={`/services/detail/${service?.slug}`}>
+          <a>
+            <div className="row g-0">
+              <div className="col-md-3 detail-align-center">
+                <img
+                  src={service?.image}
+                  className="img-fluid card-image"
+                  alt="..."
+                />
+              </div>
+              <div className="col-md-8 detail-align-center">
+                <div className="card-body">
+                  <h6 className="card-title fs-15">{service?.title}</h6>
 
-              <p className="card-text">
-                <small className="fs-12 newsfeed-card-date">
-                  {service?.excerpt}
-                </small>
-              </p>
+                  <p className="card-text">
+                    <small className="fs-12 newsfeed-card-date">
+                      {service?.excerpt}
+                    </small>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </a>
+        </Link>
       </div>
     </>
   );

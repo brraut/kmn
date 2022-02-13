@@ -9,7 +9,7 @@ function header({ context }) {
           <div className="banner-wrapper">
             <div className="title">Contact US</div>
             <div
-              className="service-description line-clamp-4"
+              className="service-description line-clamp-4 "
               dangerouslySetInnerHTML={{
                 __html: context?.contact_section?.description,
               }}
